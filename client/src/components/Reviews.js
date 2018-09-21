@@ -104,7 +104,8 @@ export default class Reviews extends Component {
         );
       } else {
         let bg = {
-          backgroundImage: 'url(http://res.cloudinary.com/damark726/image/upload/v1523851480/blank-profile-picture-973460_960_720_kxhies.png)'
+          backgroundImage:
+            'url(https://res.cloudinary.com/damark726/image/upload/v1523851480/blank-profile-picture-973460_960_720_kxhies.png)'
         };
         return (
           <div className="review" key={index}>

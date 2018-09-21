@@ -110,7 +110,7 @@ export default class SingleManga extends Component {
     } else {
       let bg = {
         backgroundImage:
-          'url(http://res.cloudinary.com/damark726/image/upload/v1523327404/No_image_available_ed3rvn.svg)',
+          'url(https://res.cloudinary.com/damark726/image/upload/v1523327404/No_image_available_ed3rvn.svg)',
         backgroundColor: '#bbbbbb'
       };
       return <div id="cover-image" style={bg} />;
@@ -128,7 +128,7 @@ export default class SingleManga extends Component {
     } else {
       let bg = {
         backgroundImage:
-          'url(http://res.cloudinary.com/damark726/image/upload/v1523327404/No_image_available_ed3rvn.svg)',
+          'url(https://res.cloudinary.com/damark726/image/upload/v1523327404/No_image_available_ed3rvn.svg)',
         backgroundColor: '#bbbbbb'
       };
       return <div id="poster-image" style={bg} />;
