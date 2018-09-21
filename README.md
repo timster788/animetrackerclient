@@ -49,3 +49,7 @@ Writing concepts wireframe done in adobeXD
 * MongoDB
 * Passport
 * Axios
+### Future Features
+- Add a upcomming anime seasons that tracks and adds new animes by the dates they come out.
+- An upgrade to the Grid System of the favorite list
+- Ability to recover password with email
