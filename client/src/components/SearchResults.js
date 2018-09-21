@@ -17,7 +17,6 @@ export default class SearchResults extends Component {
   //=====================================================================================================================================
   renderResults() {
     let divId = 1;
-    console.log(this.state);
     return this.state.results.data.map(results => {
       let bg = {
         backgroundImage: `url(${results.attributes.posterImage.original})`

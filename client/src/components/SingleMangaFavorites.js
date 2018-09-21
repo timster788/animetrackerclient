@@ -30,7 +30,6 @@ export default class SingleMangaFavorites extends Component {
 
   componentDidUpdate() {
     let divId = 1;
-    console.log(this.state.singleManga);
     fetch(this.state.singleManga.relationships.genres.links.related)
       .then(data => data.json())
       .then(data => {

@@ -269,7 +269,6 @@ export default class SingleAnimeSearchResult extends Component {
 
   //=====================================================================================================================================
   render() {
-    console.log(this.props);
     return (
       <div className="SingleAnime">
         {this.state.singleAnime ? this.renderCoverImage() : ''}

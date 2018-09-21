@@ -34,8 +34,6 @@ export default class FavoritesList extends Component {
   renderFavoritesList() {
     if (this.state.dbData) {
       return this.state.dbData.map(results => {
-        console.log('results', results);
-
         return <FavoritesListItem key={results.id} data={results} />;
       });
     } else {

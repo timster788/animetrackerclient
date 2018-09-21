@@ -317,8 +317,7 @@ export default class SingleManga extends Component {
         ) : (
           ''
         )}
-        {/* {this.state.streamingLinks ? <div className="streaming-links-title">Streaming Links</div> : ""} */}
-        {/* {this.state.streamingLinks ? <StreamingLinks streamingLinks={this.state.streamingLinks} /> : ""} */}
+
         {this.state.charactersId ? (
           <div className="characters-title">
             <span>Characters</span>

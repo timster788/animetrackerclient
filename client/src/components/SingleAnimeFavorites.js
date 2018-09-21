@@ -104,7 +104,6 @@ export default class SingleAnimeFavorites extends Component {
   render() {
     return (
       <div className="SingleAnimeFavorites">
-        {/* <div className="links"><Link to="/favorites">Back to Favorites</Link></div> */}
         <div className="links">
           <Link
             to={`/favorites/manga/${this.props.match.params.dbid}/${
