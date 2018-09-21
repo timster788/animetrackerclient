@@ -25,9 +25,7 @@ Writing concepts wireframe done in adobeXD
 
 ## Screenshots 📸
 | <img alt="HomePage" src="https://media.discordapp.net/attachments/480825903467724827/492781969562927115/Screen_Shot_2018-09-21_at_3.36.50_PM.png?width=400&height=255"> | <img alt="Login Page"
- 
  src="https://media.discordapp.net/attachments/480825903467724827/492781971844628492/Screen_Shot_2018-09-21_at_3.37.22_PM.png?width=400&height=261"> | <img alt="Registration Page"
- 
  src="https://media.discordapp.net/attachments/480825903467724827/492781976730730497/Screen_Shot_2018-09-21_at_3.37.44_PM.png?width=400&height=262"> |<img alt="Search Page"
  src="https://media.discordapp.net/attachments/480825903467724827/492781979704623128/Screen_Shot_2018-09-21_at_3.38.25_PM.png?width=719&height=461">
 
