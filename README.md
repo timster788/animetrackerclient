@@ -6,9 +6,8 @@ https://animetrackerclient.herokuapp.com/
 
  My project is an app that helps you track anime you have watched and how many episodes you have watched and manga you have read. I used the Kitsu API, which allowed me to access the titles, synopses, total episodes, and a huge amount of other data for thousands of anime and manga series. The user is able to enter a search query and get back results based on their search. They could then add specific shows to their favorites list, is added to a database, for easier reference. And lastly, they will also be able to either edit the details of the anime and manga and even delete it.  Also when the site loads it renders out the most popular anime and manga that are trending from kitsu api.
 ## WireFrame
-Writing concepts wireframe done in draw.io
-
-<img alt="Home Page" src="https://media.discordapp.net/attachments/480825903467724827/492778760379039764/Web_1920_2.jpg?width=1084&height=610">
+Writing concepts wireframe done in adobeXD
+<img alt="HomePage" src="https://media.discordapp.net/attachments/480825903467724827/492778760379039764/Web_1920_2.jpg?width=1084&height=610">
 <img alt="Home Page" src="https://media.discordapp.net/attachments/480825903467724827/492778766284750848/Web_1920_3.jpg?width=400&height=225">
 
 <img alt="Login" src="https://media.discordapp.net/attachments/480825903467724827/492778769535336451/Web_1920_4.jpg?width=1084&height=610">
