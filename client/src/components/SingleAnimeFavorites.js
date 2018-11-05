@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+
 import { Link } from 'react-router-dom';
+import Characters from './Characters';
+import StreamingLinks from './StreamingLinks';
+import Reviews from './Reviews';
+import RelatedMedia from './RelatedMedia';
 //=====================================================================================================================================
 export default class SingleAnimeFavorites extends Component {
   constructor() {
@@ -100,6 +105,44 @@ export default class SingleAnimeFavorites extends Component {
       </div>
     );
   }
+
+  //=====================================================================================================================================
+  renderCoverImage() {
+    if (this.state.singleAnime.attributes.coverImage) {
+      let bg = {
+        backgroundImage: `url(${
+          this.state.singleAnime.attributes.coverImage.large
+        })`
+      };
+      return <div id="cover-image" style={bg} />;
+    } else {
+      let bg = {
+        backgroundImage:
+          'url(https://res.cloudinary.com/damark726/image/upload/v1523327404/No_image_available_ed3rvn.svg)',
+        backgroundColor: '#bbbbbb'
+      };
+      return <div id="cover-image" style={bg} />;
+    }
+  }
+  //=====================================================================================================================================
+  renderPosterImage() {
+    if (this.state.singleAnime.attributes.posterImage) {
+      let bg = {
+        backgroundImage: `url(${
+          this.state.singleAnime.attributes.posterImage.original
+        })`
+      };
+      return <div id="poster-image" style={bg} />;
+    } else {
+      let bg = {
+        backgroundImage:
+          'url(https://res.cloudinary.com/damark726/image/upload/v1523327404/No_image_available_ed3rvn.svg)',
+        backgroundColor: '#bbbbbb'
+      };
+      return <div id="poster-image" style={bg} />;
+    }
+  }
+
   //=====================================================================================================================================
   render() {
     return (
@@ -110,51 +153,82 @@ export default class SingleAnimeFavorites extends Component {
               this.props.match.params.apiid
             }/edit`}
           >
-            Edit
+            <button>Edit</button>
           </Link>
         </div>
-        {this.state.singleAnime ? (
-          <img
-            className="cover-image"
-            alt=""
-            src={this.state.singleAnime.attributes.coverImage.original}
-          />
-        ) : (
-          ''
-        )}
+
+        {this.state.singleAnime ? this.renderCoverImage() : ''}
         {this.state.singleAnime ? (
           <div className="title">{this.renderTitles()}</div>
         ) : (
           ''
         )}
-        {this.state.singleAnime ? (
-          <div className="poster-image">
-            <img
-              alt=""
-              src={this.state.singleAnime.attributes.posterImage.small}
-            />
-          </div>
-        ) : (
-          ''
-        )}
+        {this.state.singleAnime ? this.renderPosterImage() : ''}
         {this.state.singleAnime ? (
           <div className="synopsis">
-            <span>Synopsis</span>
-            {this.state.singleAnime.attributes.synopsis}
+            <div id="synopsis-title">Synopsis</div>
+            <div>{this.state.singleAnime.attributes.synopsis}</div>
           </div>
         ) : (
           ''
         )}
+        {/* {this.state.singleAnime ? this.renderForm() : ''}
         {this.state.singleAnime ? (
-          <div className="info-title">Additional Information</div>
+          <div className="info-title">Anime Information</div>
+        ) : (
+          ''
+        )} */}
+        {this.state.singleAnime ? this.renderInfo() : ''}
+        {this.state.genres ? <div className="genres-title">Genres</div> : ''}
+        {this.state.genres ? (
+          <div className="genres-div">{this.state.genres}</div>
         ) : (
           ''
         )}
-        {this.state.singleAnime ? this.renderInfo() : ''}
-        <div className="genres-title">Genres:</div>
-        <div className="genres-div">
-          {this.state.genres ? this.state.genres : ''}
-        </div>
+        {this.state.streamingLinks ? (
+          <div className="streaming-links-title">Streaming Links</div>
+        ) : (
+          ''
+        )}
+        {this.state.streamingLinks ? (
+          <StreamingLinks streamingLinks={this.state.streamingLinks} />
+        ) : (
+          ''
+        )}
+        {this.state.charactersId ? (
+          <div className="characters-title">
+            <span>Characters</span>
+          </div>
+        ) : (
+          ''
+        )}
+        {this.state.charactersId ? (
+          <Characters charactersId={this.state.charactersId} />
+        ) : (
+          ''
+        )}
+        {this.state.reviews ? (
+          <div className="reviews-title">
+            <span>User Reviews</span>
+          </div>
+        ) : (
+          ''
+        )}
+        {this.state.reviews ? <Reviews reviews={this.state.reviews} /> : ''}
+        {this.state.relatedMedia ? (
+          <div className="related-media-title">
+            <span>Related Media</span>
+          </div>
+        ) : (
+          ''
+        )}
+        {this.state.relatedMedia ? (
+          <RelatedMedia relatedMedia={this.state.relatedMedia} />
+        ) : (
+          ''
+        )}
+
+        {/* {this.props.location.searchResult ? <div onClick={this.props.history.goBack}>Ayeeeee</div> : ""} */}
       </div>
     );
   }

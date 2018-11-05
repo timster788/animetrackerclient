@@ -257,12 +257,17 @@ body {
   border-bottom: 0.375em solid var(--blue);
   background-size: auto 100%;
 }
+.SingleAnimeFavorites > #cover-image {
+  border-bottom: 0.375em solid var(--blue);
+  background-size: auto 100%;
+}
 .SingleManga > #cover-image {
   border-bottom: 0.375em solid var(--red);
   background-size: 100% auto;
 }
 .SingleAnime > #cover-image,
-.SingleManga > #cover-image {
+.SingleManga > #cover-image,
+.SingleAnimeFavorites > #cover-image {
   grid-area: 1 / 1 / span 1 / span 20;
   background-color: var(--black);
   background-position: center center;
@@ -277,22 +282,6 @@ body {
   grid-area: 1 / 1 / span 1 / span 20;
   width: 100%;
 } */
-.SingleAnimeFavorites > .cover-image {
-  grid-area: 1 / 1 / span 1 / span 20;
-  background-color: var(--black);
-  background-position: center center;
-  background-repeat: no-repeat;
-  border-bottom: 0.375em solid var(--red);
-  background-size: 100% auto;
-}
-.SingleMangaFavorites > .cover-image {
-  grid-area: 1 / 1 / span 1 / span 20;
-  background-color: var(--black);
-  background-position: center center;
-  background-repeat: no-repeat;
-  border-bottom: 0.375em solid var(--blue);
-  background-size: auto 100%;
-}
 
 .SingleAnime > .title,
 .SingleAnimeSearchResult > .title,
@@ -320,7 +309,8 @@ body {
 }
 
 .SingleAnime > #poster-image,
-.SingleManga > #poster-image {
+.SingleManga > #poster-image,
+.SingleAnimeFavorites > #poster-image {
   grid-area: 2 / 1 / span 5 / span 4;
   background-size: contain;
   background-repeat: no-repeat;
@@ -328,22 +318,7 @@ body {
   background-color: var(--white2);
   box-shadow: 0 5px 5px var(--gray);
 }
-.SingleAnimeFavorites > .poster-image {
-  grid-area: 10 / 1 / span 5 / span 4;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: var(--white2);
-  box-shadow: 0 5px 5px var(--gray);
-}
-.SingleMangaFavorites > .poster-image {
-  grid-area: 10 / 1 / span 5 / span 4;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: var(--white2);
-  box-shadow: 0 5px 5px var(--gray);
-}
+
 /* .SingleAnime > .poster-image,
 .SingleAnimeFavorites > .poster-image,
 .SingleAnimeSearchResult > .poster-image,
@@ -352,19 +327,16 @@ body {
 .SingleMangaSearchResult > .poster-image {
   grid-area: 2 / 1 / span 6 / span 5;
 }
-
 .SingleAnime > .poster-image > img,
 .SingleAnimeFavorites > .poster-image > img,
 .SingleAnimeSearchResult > .poster-image > img {
   border: 5px solid var(--blue);
 }
-
 .SingleManga > .poster-image > img,
 .SingleMangaFavorites > .poster-image > img,
 .SingleMangaSearchResult > .poster-image > img {
   border: 5px solid var(--red);
 }
-
 .SingleAnime > .poster-image > img,
 .SingleAnimeFavorites > .poster-image > img,
 .SingleAnimeSearchResult > .poster-image > img,
@@ -376,38 +348,12 @@ body {
 } */
 
 .SingleAnime > .synopsis,
-/* .SingleAnimeFavorites > .synopsis, */
+.SingleAnimeFavorites > .synopsis,
 .SingleAnimeSearchResult > .synopsis,
 .SingleManga > .synopsis,
 .SingleMangaFavorites > .synopsis,
 .SingleMangaSearchResult > .synopsis {
   grid-area: 2 / 5 / span 5 / span 13;
-  display: grid;
-  grid-template: 1fr 9fr / 1fr;
-  text-align: justify;
-  font-size: 1.05em;
-  line-height: 1.5;
-  color: var(--black);
-  background-color: var(--white2);
-  padding: 0.75em 2em;
-  box-shadow: 0 5px 5px var(--gray);
-  overflow: scroll;
-}
-.SingleAnimeFavorites > .synopsis {
-  grid-area: 10 / 10 / span 5 / span 13;
-  display: grid;
-  grid-template: 1fr 9fr / 1fr;
-  text-align: justify;
-  font-size: 1.05em;
-  line-height: 1.5;
-  color: var(--black);
-  background-color: var(--white2);
-  padding: 0.75em 2em;
-  box-shadow: 0 5px 5px var(--gray);
-  overflow: scroll;
-}
-.SingleMangaFavorites > .synopsis {
-  grid-area: 10 / 10 / span 5 / span 13;
   display: grid;
   grid-template: 1fr 9fr / 1fr;
   text-align: justify;
@@ -436,10 +382,6 @@ body {
   font-size: 1.75em;
   font-weight: bold;
 } */
-.SingleAnimeSearchResult > .synopsis {
-  font-size: 1.75em;
-  font-weight: bold;
-}
 
 /*========================   START OF FORM STYLING  =============================*/
 .SingleAnime > form,
@@ -534,10 +476,10 @@ body {
 }
 
 .SingleAnime > .info-title,
-/* .SingleAnimeFavorites > .info-title, */
+.SingleAnimeFavorites > .info-title,
 .SingleAnimeSearchResult > .info-title,
 .SingleManga > .info-title,
-/* .SingleMangaFavorites > .info-title, */
+.SingleMangaFavorites > .info-title,
 .SingleMangaSearchResult > .info-title {
   grid-area: 8 / 1 / span 1 / span 3;
   color: var(--white);
@@ -550,35 +492,12 @@ body {
   text-shadow: 3px 3px 10px var(--gray2);
   font-weight: bold;
 }
-.SingleAnimeFavorites > .info-title {
-  grid-area: 15 / 1 / span 1 / span 3;
-  color: var(--white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 1.3em;
-  padding: 0 1em;
-  text-shadow: 3px 3px 10px var(--gray2);
-  font-weight: bold;
-}
-.SingleMangaFavorites > .info-title {
-  grid-area: 15 / 1 / span 1 / span 3;
-  color: var(--white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 1.3em;
-  padding: 0 1em;
-  text-shadow: 3px 3px 10px var(--gray2);
-  font-weight: bold;
-}
+
 .SingleAnime > .info,
-/* .SingleAnimeFavorites > .info, */
+.SingleAnimeFavorites > .info,
 .SingleAnimeSearchResult > .info,
 .SingleManga > .info,
-/* .SingleMangaFavorites > .info, */
+.SingleMangaFavorites > .info,
 .SingleMangaSearchResult > .info {
   grid-area: 9 / 1 / span 6 / span 3;
   background-color: var(--white);
@@ -586,20 +505,7 @@ body {
   grid-template: repeat(9, 1fr) / 1fr;
   font-size: 1em;
 }
-.SingleAnimeFavorites > .info {
-  grid-area: 16/ 1 / span 6 / span 3;
-  background-color: var(--white);
-  display: grid;
-  grid-template: repeat(9, 1fr) / 1fr;
-  font-size: 1em;
-}
-.SingleMangaFavorites > .info {
-  grid-area: 16/ 1 / span 6 / span 3;
-  background-color: var(--white);
-  display: grid;
-  grid-template: repeat(9, 1fr) / 1fr;
-  font-size: 1em;
-}
+
 .SingleAnime > .info > .info-divs,
 .SingleAnimeFavorites > .info > .info-divs,
 .SingleAnimeSearchResult > .info > .info-divs,
@@ -616,10 +522,10 @@ body {
 }
 
 .SingleAnime > .genres-title,
-/* .SingleAnimeFavorites > .genres-title, */
+.SingleAnimeFavorites > .genres-title,
 .SingleAnimeSearchResult > .genres-title,
 .SingleManga > .genres-title,
-/* .SingleMangaFavorites > .genres-title, */
+.SingleMangaFavorites > .genres-title,
 .SingleMangaSearchResult > .genres-title {
   grid-area: 15 / 1 / span 1 / span 3;
   color: var(--blue);
@@ -633,57 +539,14 @@ body {
   font-size: 1.3em;
   font-family: custom-font;
 }
-.SingleAnimeFavorites > .genres-title {
-  grid-area: 20 / 1 / span 1 / span 3;
-  color: var(--blue);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 1em;
-  background-color: var(--white);
-  border-top: 0.1875em solid var(--blue2);
-  font-size: 1.3em;
-  font-family: custom-font;
-}
-.SingleMangaFavorites > .genres-title {
-  grid-area: 20 / 1 / span 1 / span 3;
-  color: var(--blue);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 1em;
-  background-color: var(--white);
-  border-top: 0.1875em solid var(--blue2);
-  font-size: 1.3em;
-  font-family: custom-font;
-}
+
 .SingleAnime > .genres-div,
-/* .SingleAnimeFavorites > .genres-div, */
+.SingleAnimeFavorites > .genres-div,
 .SingleAnimeSearchResult > .genres-div,
 .SingleManga > .genres-div,
-/* .SingleMangaFavorites > .genres-div, */
+.SingleMangaFavorites > .genres-div,
 .SingleMangaSearchResult > .genres-div {
-  grid-area: 17 / 1 / span 2 / span 3;
-  display: grid;
-  grid-template: repeat(4, 1fr) / repeat(2, 1fr);
-  font-size: 0.85em;
-  font-weight: bold;
-  background-color: var(--white);
-  padding: 0 0.75em;
-}
-.SingleAnimeFavorites > .genres-div {
-  grid-area: 21 / 1 / span 2 / span 3;
-  display: grid;
-  grid-template: repeat(4, 1fr) / repeat(2, 1fr);
-  font-size: 0.85em;
-  font-weight: bold;
-  background-color: var(--white);
-  padding: 0 0.75em;
-}
-.SingleMangaFavorites > .genres-div {
-  grid-area: 21 / 1 / span 2 / span 3;
+  grid-area: 16 / 1 / span 2 / span 3;
   display: grid;
   grid-template: repeat(4, 1fr) / repeat(2, 1fr);
   font-size: 0.85em;
