@@ -267,7 +267,8 @@ body {
 }
 .SingleAnime > #cover-image,
 .SingleManga > #cover-image,
-.SingleAnimeFavorites > #cover-image {
+.SingleAnimeFavorites > #cover-image,
+.SingleMangaFavorites > #cover-image {
   grid-area: 1 / 1 / span 1 / span 20;
   background-color: var(--black);
   background-position: center center;
@@ -310,7 +311,8 @@ body {
 
 .SingleAnime > #poster-image,
 .SingleManga > #poster-image,
-.SingleAnimeFavorites > #poster-image {
+.SingleAnimeFavorites > #poster-image,
+.SingleMangaFavorites > #poster-image {
   grid-area: 2 / 1 / span 5 / span 4;
   background-size: contain;
   background-repeat: no-repeat;

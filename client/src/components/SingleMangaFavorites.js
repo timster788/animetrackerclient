@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Characters from './Characters';
+import Reviews from './Reviews';
+import RelatedMedia from './RelatedMedia';
 //=====================================================================================================================================
 export default class SingleMangaFavorites extends Component {
   constructor() {
@@ -45,6 +48,44 @@ export default class SingleMangaFavorites extends Component {
         });
       });
   }
+
+  //=====================================================================================================================================
+  renderCoverImage() {
+    if (this.state.singleManga.attributes.coverImage) {
+      let bg = {
+        backgroundImage: `url(${
+          this.state.singleManga.attributes.coverImage.original
+        })`
+      };
+      return <div id="cover-image" style={bg} />;
+    } else {
+      let bg = {
+        backgroundImage:
+          'url(https://res.cloudinary.com/damark726/image/upload/v1523327404/No_image_available_ed3rvn.svg)',
+        backgroundColor: '#bbbbbb'
+      };
+      return <div id="cover-image" style={bg} />;
+    }
+  }
+  //=====================================================================================================================================
+  renderPosterImage() {
+    if (this.state.singleManga.attributes.posterImage) {
+      let bg = {
+        backgroundImage: `url(${
+          this.state.singleManga.attributes.posterImage.original
+        })`
+      };
+      return <div id="poster-image" style={bg} />;
+    } else {
+      let bg = {
+        backgroundImage:
+          'url(https://res.cloudinary.com/damark726/image/upload/v1523327404/No_image_available_ed3rvn.svg)',
+        backgroundColor: '#bbbbbb'
+      };
+      return <div id="poster-image" style={bg} />;
+    }
+  }
+
   //=====================================================================================================================================
   renderTitles() {
     if (this.state.singleManga.attributes.titles.en_us) {
@@ -112,58 +153,77 @@ export default class SingleMangaFavorites extends Component {
   render() {
     return (
       <div className="SingleMangaFavorites">
-        {/* <div className="links"><Link to="/favorites">Back to Favorites</Link></div> */}
         <div className="links">
           <Link
             to={`/favorites/manga/${this.props.match.params.dbid}/${
               this.props.match.params.apiid
             }/edit`}
           >
-            Edit
+            <button>Edit</button>
           </Link>
         </div>
-        {this.state.singleManga ? (
-          <img
-            className="cover-image"
-            alt=""
-            src={this.state.singleManga.attributes.coverImage.original}
-          />
-        ) : (
-          ''
-        )}
+
+        {this.state.singleManga ? this.renderCoverImage() : ''}
         {this.state.singleManga ? (
           <div className="title">{this.renderTitles()}</div>
         ) : (
           ''
         )}
-        {this.state.singleManga ? (
-          <div className="poster-image">
-            <img
-              alt=""
-              src={this.state.singleManga.attributes.posterImage.small}
-            />
-          </div>
-        ) : (
-          ''
-        )}
+        {this.state.singleManga ? this.renderPosterImage() : ''}
         {this.state.singleManga ? (
           <div className="synopsis">
-            <span>Synopsis</span>
-            {this.state.singleManga.attributes.synopsis}
+            <div id="synopsis-title">Synopsis</div>
+            <div>{this.state.singleManga.attributes.synopsis}</div>
           </div>
         ) : (
           ''
         )}
+
         {this.state.singleManga ? (
-          <div className="info-title">Additional Information</div>
+          <div className="info-title">Manga Information</div>
         ) : (
           ''
         )}
         {this.state.singleManga ? this.renderInfo() : ''}
-        <div className="genres-title">Genres:</div>
-        <div className="genres-div">
-          {this.state.genres ? this.state.genres : ''}
-        </div>
+        {this.state.genres ? <div className="genres-title">Genres</div> : ''}
+        {this.state.genres ? (
+          <div className="genres-div">{this.state.genres}</div>
+        ) : (
+          ''
+        )}
+
+        {this.state.charactersId ? (
+          <div className="characters-title">
+            <span>Characters</span>
+          </div>
+        ) : (
+          ''
+        )}
+        {this.state.charactersId ? (
+          <Characters charactersId={this.state.charactersId} />
+        ) : (
+          ''
+        )}
+        {this.state.reviews ? (
+          <div className="reviews-title">
+            <span>User Reviews</span>
+          </div>
+        ) : (
+          ''
+        )}
+        {this.state.reviews ? <Reviews reviews={this.state.reviews} /> : ''}
+        {this.state.relatedMedia ? (
+          <div className="related-media-title">
+            <span>Related Media</span>
+          </div>
+        ) : (
+          ''
+        )}
+        {this.state.relatedMedia ? (
+          <RelatedMedia relatedMedia={this.state.relatedMedia} />
+        ) : (
+          ''
+        )}
       </div>
     );
   }
