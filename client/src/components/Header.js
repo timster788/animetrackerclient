@@ -16,7 +16,7 @@ export class Header extends Component {
           <div id="logo" />
           <div />
           <div className="header-links">
-            <Link to="/">Home</Link>
+            <Link to="/home">Home</Link>
           </div>
 
           <div className="header-links">
@@ -38,7 +38,7 @@ export class Header extends Component {
         <div id="logo" />
         <div />
         <div className="header-links">
-          <Link to="/">Home</Link>
+          <Link to="/home">Home</Link>
         </div>
 
         <div className="header-links">

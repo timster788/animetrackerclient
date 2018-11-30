@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import './index.css';
-
+import LandingPage from './components/landing-page';
 import LoginPage from './components/LoginPage';
 import RegistrationPage from './components/registration-page';
 import Header from './components/Header';
@@ -46,7 +46,10 @@ export default class App extends Component {
               component={SingleMangaFavorites}
             />
             <Route path="/favorites" component={FavoritesList} />
-            <Route path="/" component={Home} />
+
+            <Route exact={true} path="/" component={LandingPage} />
+
+            <Route path="/home" component={Home} />
           </Switch>
         </div>
       </BrowserRouter>

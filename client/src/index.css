@@ -926,6 +926,6 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   border-radius: 20px 0 20px 0;
-  font-size: 0.8em;
-  color: var(--white);
+  font-size: 0.6em;
+  color: var(--black);
 }

@@ -38,7 +38,7 @@ export default class FavoritesListItem extends React.Component {
             this.state.apiData.id
           }`}
         >
-          See More
+         <button>See More</button> 
         </Link>
         <br />
       </div>
