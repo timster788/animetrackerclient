@@ -23,7 +23,7 @@ export default function LandingPage(props) {
         </p>
 
         <Link to="/home">
-          <button>Anime</button>
+          <button className="landing button">Begin Tracking</button>
         </Link>
       </section>
     </div>

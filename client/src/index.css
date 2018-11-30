@@ -929,9 +929,58 @@ body {
   font-size: 0.6em;
   color: var(--black);
 }
+.landingLogo {
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+}
 
+.landing {
+  text-align: center;
+
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 10%;
+}
+h2 {
+  font-size: 1vw;
+}
+.header {
+  color: white;
+  font-weight: 900;
+  font-size: 2.5em;
+  text-align: center;
+}
 @media only screen and (max-width: 600px) {
   .Home {
     display: block;
+  }
+  .Header {
+    grid-template: 1fr / 25% repeat(6, 1fr);
+  }
+}
+@media screen and (min-width: 320px) {
+  h2 {
+    font-size: 3.2vw;
+  }
+  .landing button {
+    text-decoration: none;
+    margin: auto;
+    width: 100px;
+    display: block;
+    justify-content: center;
+  }
+  .landing p {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 1200px) {
+  h2 {
+    font-size: 1vw;
+  }
+  .landingLogo {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
   }
 }
