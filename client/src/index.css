@@ -929,3 +929,9 @@ body {
   font-size: 0.6em;
   color: var(--black);
 }
+
+@media only screen and (max-width: 600px) {
+  .Home {
+    display: block;
+  }
+}
