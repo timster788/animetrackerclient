@@ -21,6 +21,9 @@ export default function LandingPage(props) {
           interested in watching and find a link to the streaming service that
           it is available on.
         </p>
+        <h3>Test Account</h3>
+        <p>Username:demotest</p>
+        <p>Password:demotester</p>
 
         <Link to="/home">
           <button className="landing button">Begin Tracking</button>
