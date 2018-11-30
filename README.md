@@ -44,7 +44,6 @@ Writing concepts wireframe done in adobeXD
 * Redux
 * React.js for front-end/views and CSS grid and flexbox for styling.
 * Node.js and express.js for the back-end.
-* PostgresQL for database.
 * Kitsu.io API
 * MongoDB
 * Passport
