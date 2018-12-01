@@ -14,11 +14,7 @@ export function RegistrationPage(props) {
     <div className="Register">
       <h2>Register for MangAnime</h2>
       <p className="Register">
-        This app was created to keep track of the anime that you watch and the
-        manga that you read.Once you register you can search for any anime or
-        manga in both english and japanese. You can then add them to your
-        favorites lists tracking the episodes you and seen and the chapters that
-        you have read
+        
       </p>
       <RegistrationForm />
     </div>
