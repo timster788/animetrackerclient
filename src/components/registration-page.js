@@ -13,9 +13,7 @@ export function RegistrationPage(props) {
   return (
     <div className="Register">
       <h2>Register for MangAnime</h2>
-      <p className="Register">
-        
-      </p>
+
       <RegistrationForm />
     </div>
   );
